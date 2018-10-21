@@ -4,10 +4,60 @@
     <Filter Include="Main">
       <UniqueIdentifier>{d15bd531-262e-40b9-9192-732adc807db9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Managers">
+      <UniqueIdentifier>{16c66e1b-e9ca-4f48-97e4-850b19b8c65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Third Party %28i.e. tinyxml%29">
+      <UniqueIdentifier>{fd395c98-1fc8-43c9-ab1a-90569301246a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tile Map Stuff">
+      <UniqueIdentifier>{45cb8450-136c-443c-aba5-7c81722a7f18}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Third Party %28i.e. tinyxml%29</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapDataSerialiser.cpp">
+      <Filter>Tile Map Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapData.cpp">
+      <Filter>Tile Map Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="StringManipulator.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapRenderer.cpp">
+      <Filter>Tile Map Stuff</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Third Party %28i.e. tinyxml%29</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapRenderer.h">
+      <Filter>Tile Map Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapDataSerialiser.h">
+      <Filter>Tile Map Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapData.h">
+      <Filter>Tile Map Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapManager.h">
+      <Filter>Tile Map Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="StringManipulator.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

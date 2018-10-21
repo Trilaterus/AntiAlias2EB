@@ -1,10 +1,23 @@
 #include <SFML/Graphics.hpp>
 
+#include "TileMapDataSerialiser.h"
+#include "TileMapData.h"
+#include <vector>
+#include <iostream>
+
+void test()
+{
+	TileMapDataSerialiser serialiser;
+	serialiser.createTileMapDataFromFile("../Game/Assets/TiledMaps/FurstTown/furstTown.tmx");
+}
+
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	test();
+
+	sf::RenderWindow window(sf::VideoMode(800, 600), "AA2:EB");
+
+	sf::RenderTexture tileMap;
 
 	while (window.isOpen())
 	{
@@ -16,7 +29,6 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
 		window.display();
 	}
 

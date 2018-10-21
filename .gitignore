@@ -301,3 +301,15 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# My added ignore files
+# =========================
+
+$GIT_DIR/AntiAlias2EB/AntiAlias2EB/BuildJunk/*
+AntiAlias2EB/AntiAlias2EB/BuildJunk/(Configuration)/AntiAlias2EB.tlog/CL.command.1.tlog
+AntiAlias2EB/AntiAlias2EB/BuildJunk/(Configuration)/AntiAlias2EB.tlog/CL.read.1.tlog
+AntiAlias2EB/AntiAlias2EB/BuildJunk/(Configuration)/AntiAlias2EB.tlog/CL.write.1.tlog
+AntiAlias2EB/AntiAlias2EB/BuildJunk/(Configuration)/AntiAlias2EB.tlog/link.command.1.tlog
+AntiAlias2EB/AntiAlias2EB/BuildJunk/(Configuration)/AntiAlias2EB.tlog/link.read.1.tlog
+AntiAlias2EB/AntiAlias2EB/BuildJunk/(Configuration)/AntiAlias2EB.tlog/link.write.1.tlog
+AntiAlias2EB/AntiAlias2EB/BuildJunk/(Configuration)/vc140.idb

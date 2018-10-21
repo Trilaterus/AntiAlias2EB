@@ -69,10 +69,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IntDir>BuildJunk\(Configuration)\</IntDir>
+    <IntDir>BuildJunk\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>BuildJunk\(Configuration)\</IntDir>
+    <IntDir>BuildJunk\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -126,6 +126,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="StringManipulator.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TileMapData.cpp" />
+    <ClCompile Include="TileMapDataSerialiser.cpp" />
+    <ClCompile Include="TileMapRenderer.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StringManipulator.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TileMapData.h" />
+    <ClInclude Include="TileMapDataSerialiser.h" />
+    <ClInclude Include="TileMapManager.h" />
+    <ClInclude Include="TileMapRenderer.h" />
+    <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
