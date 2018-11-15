@@ -7,7 +7,7 @@ class TileMapData
 public:
 	TileMapData();
 
-	bool isValid();
+	bool isValid() const;
 
 	struct MapAttributes
 	{
@@ -37,7 +37,8 @@ public:
 
 private:
 
-	bool isMapAttributesValid();
-	bool isTilesetAttributesValid();
+	bool isMapAttributesValid() const;
+	bool isTilesetAttributesValid() const;
+	bool isChunkDataValid() const;
 
 };

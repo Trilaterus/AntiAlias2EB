@@ -9,5 +9,5 @@ class TileMapDataSerialiser
 public:
 	TileMapDataSerialiser();
 
-	TileMapData createTileMapDataFromFile(const std::string& tmxFilePath);
+	const TileMapData createTileMapDataFromFile(const std::string& tmxFilePath) const;
 };

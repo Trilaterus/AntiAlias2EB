@@ -27,15 +27,15 @@ TileMapDataSerialiser::TileMapDataSerialiser()
 {
 }
 
-TileMapData TileMapDataSerialiser::createTileMapDataFromFile(const std::string& tmxFilePath)
+const TileMapData TileMapDataSerialiser::createTileMapDataFromFile(const std::string& tmxFilePath) const
 {
 	TileMapData tileMapData;
 
 	tinyxml2::XMLDocument tmxFile;
 
-	const bool isFileLoaded = tmxFile.LoadFile(tmxFilePath.c_str()) == tinyxml2::XML_SUCCESS
-						   || tmxFile.LoadFile(tmxFilePath.c_str()) == tinyxml2::XML_NO_ERROR;
-	if (!isFileLoaded)
+	tinyxml2::XMLError loadingResult= tmxFile.LoadFile(tmxFilePath.c_str());
+	if (loadingResult != tinyxml2::XML_NO_ERROR ||
+		loadingResult != tinyxml2::XML_SUCCESS)
 	{
 		return TileMapData();
 	}

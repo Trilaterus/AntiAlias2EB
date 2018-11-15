@@ -13,6 +13,12 @@
     <Filter Include="Tile Map Stuff">
       <UniqueIdentifier>{45cb8450-136c-443c-aba5-7c81722a7f18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tile Map Stuff\tmx File Handling">
+      <UniqueIdentifier>{91e3be65-c78b-4ee4-9c93-a908e0943139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tile Map Stuff\tsx File Handling">
+      <UniqueIdentifier>{f66c2839-d2b5-4f02-b846-e412c1cf2075}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,17 +30,23 @@
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Third Party %28i.e. tinyxml%29</Filter>
     </ClCompile>
-    <ClCompile Include="TileMapDataSerialiser.cpp">
-      <Filter>Tile Map Stuff</Filter>
-    </ClCompile>
-    <ClCompile Include="TileMapData.cpp">
-      <Filter>Tile Map Stuff</Filter>
-    </ClCompile>
     <ClCompile Include="StringManipulator.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
     <ClCompile Include="TileMapRenderer.cpp">
       <Filter>Tile Map Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapData.cpp">
+      <Filter>Tile Map Stuff\tmx File Handling</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapDataSerialiser.cpp">
+      <Filter>Tile Map Stuff\tmx File Handling</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSetDataSerialiser.cpp">
+      <Filter>Tile Map Stuff\tsx File Handling</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSetData.cpp">
+      <Filter>Tile Map Stuff\tsx File Handling</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,17 +59,23 @@
     <ClInclude Include="TileMapRenderer.h">
       <Filter>Tile Map Stuff</Filter>
     </ClInclude>
-    <ClInclude Include="TileMapDataSerialiser.h">
-      <Filter>Tile Map Stuff</Filter>
-    </ClInclude>
-    <ClInclude Include="TileMapData.h">
-      <Filter>Tile Map Stuff</Filter>
-    </ClInclude>
     <ClInclude Include="TileMapManager.h">
       <Filter>Tile Map Stuff</Filter>
     </ClInclude>
     <ClInclude Include="StringManipulator.h">
       <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapData.h">
+      <Filter>Tile Map Stuff\tmx File Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapDataSerialiser.h">
+      <Filter>Tile Map Stuff\tmx File Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSetData.h">
+      <Filter>Tile Map Stuff\tsx File Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSetDataSerialiser.h">
+      <Filter>Tile Map Stuff\tsx File Handling</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,15 +4,16 @@ TileMapData::TileMapData()
 {
 }
 
-bool TileMapData::isValid()
+bool TileMapData::isValid() const
 {
 	bool isValid = isMapAttributesValid() 
-				&& isTilesetAttributesValid();
+				&& isTilesetAttributesValid()
+				&& isChunkDataValid();
 
 	return isValid;
 }
 
-bool TileMapData::isMapAttributesValid()
+bool TileMapData::isMapAttributesValid() const
 {
 	const MapAttributes invalidMap;
 
@@ -27,13 +28,33 @@ bool TileMapData::isMapAttributesValid()
 	return true;
 }
 
-bool TileMapData::isTilesetAttributesValid()
+bool TileMapData::isTilesetAttributesValid() const
 {
 	const TileMapData::TilesetAttributes invalidTileset;
 	for (const TilesetAttributes tileset : m_tilesets)
 	{
 		if (tileset.m_firstGID == invalidTileset.m_firstGID
 			|| tileset.m_tilesetFilePath == invalidTileset.m_tilesetFilePath)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool TileMapData::isChunkDataValid() const
+{
+	if (isMapAttributesValid() == false)
+	{
+		return false;
+	}
+
+	// tmx file width and height are 0 based (I think?) so increment each when calculating
+	const unsigned int expectedChunkSize = (m_mapAttributes.m_mapWidth + 1) * (m_mapAttributes.m_mapHeight + 1);
+	for (const ChunkData& chunk : m_chunks)
+	{
+		if (chunk.m_chunkData.size() != expectedChunkSize)
 		{
 			return false;
 		}

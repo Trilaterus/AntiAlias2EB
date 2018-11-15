@@ -3,3 +3,4 @@ Tiled - Map creation/exportion
 Kenney - Assets for testing/for full game?!
 OpenGameArt.org:
 - Lanea Zimmerman (https://opengameart.org/content/tiny-16-basic)
+SFML - Main library used

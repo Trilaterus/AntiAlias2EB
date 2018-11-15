@@ -131,6 +131,8 @@
     <ClCompile Include="TileMapData.cpp" />
     <ClCompile Include="TileMapDataSerialiser.cpp" />
     <ClCompile Include="TileMapRenderer.cpp" />
+    <ClCompile Include="TileSetData.cpp" />
+    <ClCompile Include="TileSetDataSerialiser.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +142,8 @@
     <ClInclude Include="TileMapDataSerialiser.h" />
     <ClInclude Include="TileMapManager.h" />
     <ClInclude Include="TileMapRenderer.h" />
+    <ClInclude Include="TileSetData.h" />
+    <ClInclude Include="TileSetDataSerialiser.h" />
     <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
