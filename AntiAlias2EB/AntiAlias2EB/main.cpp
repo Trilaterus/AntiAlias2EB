@@ -35,6 +35,8 @@ int main()
 	const float frameRate = 60.f;
 	const float secondsPerFrame = 1.f / frameRate;
 
+	window.setFramerateLimit(static_cast<unsigned int>(frameRate));
+
 	SceneManager::getInstance().clearAndAddScreen(new Screens::Overworld(window));
 
 	while (window.isOpen())
@@ -50,8 +52,6 @@ int main()
 			SceneManager::getInstance().handleEvents(event);
 		}
 
-		// This not working to limit the CPU usage, will try to fix using:
-		// https://gafferongames.com/post/fix_your_timestep/
 		if (clock.getElapsedTime().asSeconds() > secondsPerFrame)
 		{
 			const float timeElapsed = clock.restart().asSeconds();
