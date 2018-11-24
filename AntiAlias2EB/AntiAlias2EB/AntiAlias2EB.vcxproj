@@ -125,26 +125,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FadeColour.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="OverworldScreen.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneTransition.cpp" />
     <ClCompile Include="StringManipulator.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TileMapData.cpp" />
     <ClCompile Include="TileMapDataSerialiser.cpp" />
+    <ClCompile Include="TileMapObject.cpp" />
     <ClCompile Include="TileMapRenderer.cpp" />
     <ClCompile Include="TileSetData.cpp" />
     <ClCompile Include="TileSetDataSerialiser.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="Transitioner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FadeColour.h" />
+    <ClInclude Include="OverworldScreen.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneTransition.h" />
     <ClInclude Include="StringManipulator.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TileMapData.h" />
     <ClInclude Include="TileMapDataSerialiser.h" />
     <ClInclude Include="TileMapManager.h" />
+    <ClInclude Include="TileMapObject.h" />
     <ClInclude Include="TileMapRenderer.h" />
     <ClInclude Include="TileSetData.h" />
     <ClInclude Include="TileSetDataSerialiser.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="Transitioner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

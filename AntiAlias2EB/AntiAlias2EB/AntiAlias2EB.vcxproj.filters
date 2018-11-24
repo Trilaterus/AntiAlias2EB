@@ -19,6 +19,15 @@
     <Filter Include="Tile Map Stuff\tsx File Handling">
       <UniqueIdentifier>{f66c2839-d2b5-4f02-b846-e412c1cf2075}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Screen Management">
+      <UniqueIdentifier>{f88f0e74-6ed9-4db7-9d47-00149633bc20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen Management\Transitions">
+      <UniqueIdentifier>{8d5fbf71-7903-4fff-97da-514880e63c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen Management\Screens">
+      <UniqueIdentifier>{02b6d3c5-fa9d-45de-8d99-a16b016896d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,6 +57,27 @@
     <ClCompile Include="TileSetData.cpp">
       <Filter>Tile Map Stuff\tsx File Handling</Filter>
     </ClCompile>
+    <ClCompile Include="TileMapObject.cpp">
+      <Filter>Tile Map Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Screen Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Screen Management</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTransition.cpp">
+      <Filter>Screen Management\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="FadeColour.cpp">
+      <Filter>Screen Management\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="Transitioner.cpp">
+      <Filter>Screen Management\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="OverworldScreen.cpp">
+      <Filter>Screen Management\Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextureManager.h">
@@ -76,6 +106,27 @@
     </ClInclude>
     <ClInclude Include="TileSetDataSerialiser.h">
       <Filter>Tile Map Stuff\tsx File Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapObject.h">
+      <Filter>Tile Map Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Screen Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Screen Management</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTransition.h">
+      <Filter>Screen Management\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="FadeColour.h">
+      <Filter>Screen Management\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="Transitioner.h">
+      <Filter>Screen Management\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="OverworldScreen.h">
+      <Filter>Screen Management\Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
