@@ -55,10 +55,13 @@ int main()
 		if (clock.getElapsedTime().asSeconds() > secondsPerFrame)
 		{
 			const float timeElapsed = clock.restart().asSeconds();
+
 			SceneManager::getInstance().update(timeElapsed);
 
 			window.clear();
+
 			window.draw(SceneManager::getInstance());
+
 			window.display();
 		}
 	}

@@ -24,7 +24,7 @@ public:
 	void clearAndAddScreen(Scene* pScene);
 	void clearAndAddScreen(Scene* pScene, SceneTransition* transition);
 
-	void popScene(); // Use this for all Overalys and Instant Screen
+	void popScreen(); // Use this for all Overalys and Instant Screen
 	void popScreen(SceneTransition* transition);
 
 	void handleEvents(const sf::Event& event);

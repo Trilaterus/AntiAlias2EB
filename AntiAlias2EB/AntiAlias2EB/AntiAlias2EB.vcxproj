@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnotherScreen.cpp" />
     <ClCompile Include="FadeColour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OverworldScreen.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="Transitioner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnotherScreen.h" />
     <ClInclude Include="FadeColour.h" />
     <ClInclude Include="OverworldScreen.h" />
     <ClInclude Include="Scene.h" />

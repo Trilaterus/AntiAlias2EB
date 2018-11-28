@@ -30,8 +30,8 @@ namespace Transition
 		if (fPercentDone < 0.025f)
 		{
 			m_Colour.a = 0;
-			m_prevScene.reset();
-			m_nextScene.reset();
+			//m_prevScene.reset(); // Why was this done?!
+			//m_nextScene.reset(); // Why was this done?!
 			return false; // Finished transitioning
 		}
 

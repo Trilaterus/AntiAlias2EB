@@ -78,6 +78,9 @@
     <ClCompile Include="OverworldScreen.cpp">
       <Filter>Screen Management\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="AnotherScreen.cpp">
+      <Filter>Screen Management\Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextureManager.h">
@@ -126,6 +129,9 @@
       <Filter>Screen Management\Transitions</Filter>
     </ClInclude>
     <ClInclude Include="OverworldScreen.h">
+      <Filter>Screen Management\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="AnotherScreen.h">
       <Filter>Screen Management\Screens</Filter>
     </ClInclude>
   </ItemGroup>

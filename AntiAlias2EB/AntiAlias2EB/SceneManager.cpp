@@ -31,7 +31,7 @@ void SceneManager::clearAndAddScreen(Scene* pScene, SceneTransition* transition)
 	m_AllScenes.push_back(nextScene);
 }
 
-void SceneManager::popScene()
+void SceneManager::popScreen()
 {
 	m_AllScenes.pop_back();
 }
@@ -71,7 +71,7 @@ void SceneManager::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	else
 	{
 		// May need some null checking...
-		for (std::vector<std::shared_ptr<Scene>>::const_reverse_iterator it = m_AllScenes.rbegin(); it != m_AllScenes.rend(); ++it)
+		for (std::vector<std::shared_ptr<Scene>>::const_iterator it = m_AllScenes.begin(); it != m_AllScenes.end(); ++it)
 		{
 			target.draw(**it);
 		}
