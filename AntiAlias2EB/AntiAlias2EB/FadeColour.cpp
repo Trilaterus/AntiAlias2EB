@@ -27,12 +27,18 @@ namespace Transition
 
 		m_Colour.a = sf::Uint8(fPercentDone * 255.f);
 
-		if (fPercentDone < 0.025f)
+		// Pretty sure this is supposed to be colour? or like inverse since it's 0 to 1?
+		// Wait the maths doesn't seem right at all, try googling "sin((1.5 * 3.14) / 3)" that equals pretty much 1...
+		// This seems to be the cause of an issue where the screen will transition instantly rather than waiting the duration (but not in all cases?)
+		if (fPercentDone < 0.025f) 
 		{
 			m_Colour.a = 0;
-			//m_prevScene.reset(); // Why was this done?!
-			//m_nextScene.reset(); // Why was this done?!
-			return false; // Finished transitioning
+
+			// Finished transitioning so clear links to screen
+			m_prevScene.reset();
+			m_nextScene.reset();
+
+			return false; 
 		}
 
 		return true; // Continue transitioning

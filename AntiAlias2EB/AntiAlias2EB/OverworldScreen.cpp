@@ -17,7 +17,7 @@ namespace Screens
 		if (event.type == event.KeyPressed &&
 			event.key.code == sf::Keyboard::P)
 		{
-			//SceneManager::getInstance().clearAndAddScreen(new Screens::AnotherScreen(m_Window), new Transition::FadeColour(3.f, sf::Color::Green));
+			SceneManager::getInstance().clearAndAddScreen(new Screens::AnotherScreen(m_Window), new Transition::FadeColour(3.f, sf::Color::Green));
 		}
 	}
 

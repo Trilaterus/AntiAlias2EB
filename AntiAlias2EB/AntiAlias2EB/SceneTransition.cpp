@@ -4,8 +4,8 @@ SceneTransition::SceneTransition()
 {
 }
 
-void SceneTransition::setScenes(Scene* prevScene, Scene* nextScene)
+void SceneTransition::setScenes(std::shared_ptr<Scene> prevScene, std::shared_ptr<Scene> nextScene)
 {
-	m_prevScene.reset(prevScene);
-	m_nextScene.reset(nextScene);
+	m_prevScene = prevScene;
+	m_nextScene = nextScene;
 }

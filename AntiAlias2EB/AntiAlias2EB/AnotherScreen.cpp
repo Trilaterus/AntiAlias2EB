@@ -14,7 +14,7 @@ void Screens::AnotherScreen::handleEvents(const sf::Event& event)
 	if (event.type == event.KeyPressed &&
 		event.key.code == sf::Keyboard::Space)
 	{
-		//SceneManager::getInstance().clearAndAddScreen(new Screens::Overworld(m_Window), new Transition::FadeColour(3.f, sf::Color::Green));
+		SceneManager::getInstance().clearAndAddScreen(new Screens::Overworld(m_Window), new Transition::FadeColour(3.f, sf::Color::Green));
 	}
 }
 

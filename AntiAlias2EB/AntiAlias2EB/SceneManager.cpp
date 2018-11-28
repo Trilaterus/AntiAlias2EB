@@ -1,5 +1,9 @@
 #include "SceneManager.h"
 
+// The reason I pass around smart pointers:
+// http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-sharedptrparam-owner
+// tldr; The thing I'm passing it to becomes part owner, so it's fine!
+
 SceneManager& SceneManager::getInstance()
 {
 	static SceneManager instance;
@@ -14,7 +18,7 @@ void SceneManager::pushScreen(Scene* pScene)
 void SceneManager::pushScreen(Scene* pScene, SceneTransition* transition)
 {
 	m_AllScenes.push_back(std::shared_ptr<Scene>(pScene));
-	m_Transitioner.startTransition(transition, m_AllScenes.at(m_AllScenes.size() - 2).get(), m_AllScenes.back().get());
+	m_Transitioner.startTransition(transition, m_AllScenes.at(m_AllScenes.size() - 2), m_AllScenes.back());
 }
 
 void SceneManager::clearAndAddScreen(Scene* pScene)
@@ -26,7 +30,7 @@ void SceneManager::clearAndAddScreen(Scene* pScene)
 void SceneManager::clearAndAddScreen(Scene* pScene, SceneTransition* transition)
 {
 	std::shared_ptr<Scene> nextScene(pScene);
-	m_Transitioner.startTransition(transition, m_AllScenes.back().get(), nextScene.get());
+	m_Transitioner.startTransition(transition, m_AllScenes.back(), nextScene);
 	m_AllScenes.clear();
 	m_AllScenes.push_back(nextScene);
 }
@@ -38,7 +42,7 @@ void SceneManager::popScreen()
 
 void SceneManager::popScreen(SceneTransition* transition)
 {
-	m_Transitioner.startTransition(transition, m_AllScenes.back().get(), m_AllScenes.at(m_AllScenes.size() - 2).get());
+	m_Transitioner.startTransition(transition, m_AllScenes.back(), m_AllScenes.at(m_AllScenes.size() - 2));
 	m_AllScenes.pop_back();
 }
 

@@ -7,7 +7,7 @@ Transitioner::Transitioner()
 {
 }
 
-void Transitioner::startTransition(SceneTransition* transition, Scene* prevScene, Scene* nextScene)
+void Transitioner::startTransition(SceneTransition* transition, std::shared_ptr<Scene> prevScene, std::shared_ptr<Scene> nextScene)
 {
 	m_currentTransition.reset(transition);
 	

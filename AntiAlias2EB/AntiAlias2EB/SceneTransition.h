@@ -13,7 +13,7 @@ class SceneTransition : public sf::Drawable
 public:
 	SceneTransition();
 
-	void setScenes(Scene* prevScene, Scene* nextScene);
+	void setScenes(std::shared_ptr<Scene> prevScene, std::shared_ptr<Scene> nextScene);
 
 	virtual bool update(float fFrameChunk) = 0; // returns false when complete (it's like asking "is this transitioning?")
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;

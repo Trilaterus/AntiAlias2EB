@@ -14,7 +14,7 @@ class Transitioner : public sf::Drawable
 public:
 	Transitioner();
 
-	void startTransition(SceneTransition* transition, Scene* prevScene, Scene* nextScene);
+	void startTransition(SceneTransition* transition, std::shared_ptr<Scene> prevScene, std::shared_ptr<Scene> nextScene);
 
 	bool isTransitioning() const;
 
