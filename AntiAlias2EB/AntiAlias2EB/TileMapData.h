@@ -7,8 +7,6 @@ class TileMapData
 public:
 	TileMapData();
 
-	bool isValid() const;
-
 	struct MapAttributes
 	{
 		MapAttributes();
@@ -29,16 +27,22 @@ public:
 	};
 	std::vector<TilesetAttributes> m_tilesets;
 
-	struct ChunkData
+	struct LayerData
 	{
+		bool isPlayerLayer() const;
+
+		std::string m_layerName;
+
 		std::vector<unsigned int> m_chunkData;
 	};
-	std::vector<ChunkData> m_chunks;
+	std::vector<LayerData> m_layerData;
+
+	bool isValid() const;
 
 private:
 
 	bool isMapAttributesValid() const;
 	bool isTilesetAttributesValid() const;
-	bool isChunkDataValid() const;
+	bool isLayerDataValid() const;
 
 };

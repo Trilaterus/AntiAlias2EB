@@ -22,7 +22,7 @@ public:
 
 	virtual void handleEvents(const sf::Event& event) = 0;
 	virtual void update(float fFrameChunk);	
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
 protected:
 	const sf::RenderWindow& m_Window; // Maybe make this static and set it right at the beginning?

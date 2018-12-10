@@ -17,6 +17,7 @@ namespace TmxElementNames
 		const std::string& tilesetPathName		= "source";
 
 		const std::string& layerName			= "layer";
+		const std::string& layerNameName		= "name";
 
 			const std::string& layerDataName	= "data";
 
@@ -71,39 +72,45 @@ const TileMapData TileMapDataSerialiser::createTileMapDataFromFile(const std::st
 		tilesetData = tilesetData->NextSiblingElement(TmxElementNames::tilesetName.c_str());
 	}
 
-	tinyxml2::XMLElement* layerData = rootMapData->FirstChildElement(TmxElementNames::layerName.c_str());
+	tinyxml2::XMLElement* layerDataRoot = rootMapData->FirstChildElement(TmxElementNames::layerName.c_str());
 	bool parsingLayers = true;
 	while (parsingLayers)
 	{
-		if (layerData == nullptr)
+		if (layerDataRoot == nullptr)
 		{
 			parsingLayers = false;
 			continue;
 		}
 
-		tinyxml2::XMLElement* layerDataData = layerData->FirstChildElement(TmxElementNames::layerDataName.c_str());
+		TileMapData::LayerData layerData;
+		layerData.m_layerName = layerDataRoot->Attribute(TmxElementNames::layerNameName.c_str());
+
+		tinyxml2::XMLElement* layerDataData = layerDataRoot->FirstChildElement(TmxElementNames::layerDataName.c_str());
 		if (layerDataData == nullptr)
 		{
+			// Should always have a <data> tag
 			return TileMapData();
 		}
 
 		tinyxml2::XMLElement* chunkData = layerDataData->FirstChildElement(TmxElementNames::chunkName.c_str());
 		if (chunkData == nullptr)
 		{
-			return TileMapData();
+			// May not always have chunk data (i.e. 'player' layer)
+			layerDataRoot = layerDataRoot->NextSiblingElement(TmxElementNames::layerName.c_str());
+			continue;
 		}
 
 		std::string rawChunkText = chunkData->GetText();
 		std::vector<std::string> chunkTexts = StringManipulator::splitString(rawChunkText, ',');
-		TileMapData::ChunkData tileIndexes;
 		for (std::string& tileIndexString : chunkTexts)
 		{
 			StringManipulator::replaceFirstOccurrence(tileIndexString, "\n", "");
-			tileIndexes.m_chunkData.push_back(std::stoul(tileIndexString));
+			layerData.m_chunkData.push_back(std::stoul(tileIndexString));
 		}
-		tileMapData.m_chunks.push_back(tileIndexes);
 
-		layerData = layerData->NextSiblingElement(TmxElementNames::layerName.c_str());
+		tileMapData.m_layerData.push_back(layerData);
+
+		layerDataRoot = layerDataRoot->NextSiblingElement(TmxElementNames::layerName.c_str());
 	}
 
 	return tileMapData;

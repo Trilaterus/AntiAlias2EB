@@ -25,8 +25,9 @@ namespace Screens
 	{
 	}
 
-	void Overworld::draw(sf::RenderTarget & target, sf::RenderStates states) const
+	void Overworld::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
-		target.draw(m_tileMapRenderer);
+		m_tileMapRenderer.drawBehindPlayerTexture(target, states);
+		m_tileMapRenderer.drawinfrontPlayerTexture(target, states);
 	}
 }

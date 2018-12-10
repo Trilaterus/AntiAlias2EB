@@ -1,19 +1,19 @@
 #pragma once
 
 #include <SFML\Graphics\RenderTexture.hpp>
-#include <SFML\Graphics\Drawable.hpp>
 
 #include "TileMapData.h"
 
-class TileMapRenderer : public sf::Drawable
+class TileMapRenderer
 {
 public:
 	TileMapRenderer();
 
 	bool drawToRenderTexture(const std::string& baseFilePath, const std::string& tmxFileName);
 
-	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-	sf::RenderTexture m_mapRenderTexture;
 private:
+	sf::RenderTexture m_behindPlayerTexture;
+	sf::RenderTexture m_infrontPlayerTexture;
+
 };

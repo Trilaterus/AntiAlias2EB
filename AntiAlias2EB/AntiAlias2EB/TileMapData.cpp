@@ -1,5 +1,10 @@
 #include "TileMapData.h"
 
+namespace
+{
+	const std::string playerLayerName = "player";
+}
+
 TileMapData::TileMapData()
 {
 }
@@ -8,7 +13,7 @@ bool TileMapData::isValid() const
 {
 	bool isValid = isMapAttributesValid() 
 				&& isTilesetAttributesValid()
-				&& isChunkDataValid();
+				&& isLayerDataValid();
 
 	return isValid;
 }
@@ -43,7 +48,7 @@ bool TileMapData::isTilesetAttributesValid() const
 	return true;
 }
 
-bool TileMapData::isChunkDataValid() const
+bool TileMapData::isLayerDataValid() const
 {
 	if (isMapAttributesValid() == false)
 	{
@@ -52,9 +57,9 @@ bool TileMapData::isChunkDataValid() const
 
 	// tmx file width and height are 0 based (I think?) so increment each when calculating
 	const unsigned int expectedChunkSize = (m_mapAttributes.m_mapWidth + 1) * (m_mapAttributes.m_mapHeight + 1);
-	for (const ChunkData& chunk : m_chunks)
+	for (const auto& layer : m_layerData)
 	{
-		if (chunk.m_chunkData.size() != expectedChunkSize)
+		if (layer.m_chunkData.size() != expectedChunkSize)
 		{
 			return false;
 		}
@@ -75,4 +80,9 @@ TileMapData::TilesetAttributes::TilesetAttributes()
 	: m_firstGID(0)
 	, m_tilesetFilePath("")
 {
+}
+
+bool TileMapData::LayerData::isPlayerLayer() const
+{
+	return m_layerName == playerLayerName;
 }
