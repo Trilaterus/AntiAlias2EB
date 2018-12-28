@@ -9,6 +9,8 @@
 #include "TileMapRenderer.h"
 #include "SceneManager.h"
 #include "OverworldScreen.h"
+#include "AnotherScreen.h"
+#include "TextureManager.h"
 
 void test()
 {
@@ -36,6 +38,8 @@ int main()
 	const float secondsPerFrame = 1.f / frameRate;
 
 	window.setFramerateLimit(static_cast<unsigned int>(frameRate));
+
+	TextureManager::getInstance().loadAnimTexture("player", "../Game/Assets/Animations/running_man.png", "../Game/Assets/Animations/running_man.sprites");
 
 	SceneManager::getInstance().clearAndAddScreen(new Screens::Overworld(window));
 

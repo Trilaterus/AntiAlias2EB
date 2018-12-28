@@ -9,9 +9,21 @@ multiple objects need that texture it doesn't need to load a copy for each one
 #include <map>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "AnimTexture.h"
 
 class TextureManager
 {
+public:
+	static TextureManager& getInstance();
+
+	void loadTexture(const std::string& name, const std::string& fileName);
+	void loadFont(const std::string& name, const std::string& fileName);
+	void loadAnimTexture(const std::string& name, const std::string& textureFilePath, const std::string& animFilePath);
+
+	sf::Texture& getTexRef(const std::string& texture);
+	sf::Font& getFontRef(const std::string& font);
+	AnimTexture& getAnimTexRef(const std::string& animTex);
+
 private:
 	TextureManager(); // Overridden default constructor for Singleton class
 	TextureManager(TextureManager const&); // Overridden default constructor for Singleton class
@@ -19,17 +31,7 @@ private:
 
 	std::map<std::string, sf::Texture> m_AllTextures;
 	std::map<std::string, sf::Font> m_AllFonts;
-
-protected:
-
-
-public:
-	static TextureManager& getInstance();
-
-	void loadTexture(const std::string& name, const std::string& fileName);
-	void loadFont(const std::string& name, const std::string& fileName);
-	sf::Texture& getTexRef(const std::string& texture);
-	sf::Font& getFontRef(const std::string& font);
+	std::map<std::string, AnimTexture> m_AllAnimTextures;
 };
 
 #endif

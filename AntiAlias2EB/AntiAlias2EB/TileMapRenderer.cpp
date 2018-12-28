@@ -55,21 +55,28 @@ bool TileMapRenderer::drawToRenderTexture(const std::string& baseFilePath, const
 	const unsigned int& mapHeight = tilemapData.m_mapAttributes.m_mapHeight + 1; // Size in tile amount (0 based for some monkeying reason)
 	const unsigned int& tileWidth = tilemapData.m_mapAttributes.m_tileWidth;
 	const unsigned int& tileHeight = tilemapData.m_mapAttributes.m_tileHeight;
-	m_mapRenderTexture.create(mapWidth * tileWidth, mapHeight * tileHeight);
+	m_behindPlayerTexture.create(mapWidth * tileWidth, mapHeight * tileHeight);
+	m_infrontPlayerTexture.create(mapWidth * tileWidth, mapHeight * tileHeight);
 
-	for (const TileMapData::ChunkData& chunk : tilemapData.m_chunks)
+	bool playerLayerFound = false;
+	for (const TileMapData::LayerData& layer : tilemapData.m_layerData)
 	{
+		if (layer.isPlayerLayer())
+		{
+			playerLayerFound = true;
+		}
+
 		std::vector<sf::VertexArray> vertices;
 		vertices.resize(textureMap.size());
-		for (sf::VertexArray& vertice : vertices) // WTF AM I DOING WHERE IS MY LOOPING PER LAYER SHIT YOU... GAHH START AGAINAINAINAINAIN
+		for (sf::VertexArray& vertice : vertices)
 		{
 			vertice.setPrimitiveType(sf::Quads);
 			vertice.resize(mapWidth * mapHeight * 4); // 4 vertices per tile (i.e. each point in the square)
 		}
 
-		for (int i = 0; i < chunk.m_chunkData.size(); ++i)
+		for (int i = 0; i < layer.m_chunkData.size(); ++i)
 		{
-			const unsigned int tileID = chunk.m_chunkData.at(i);
+			const unsigned int tileID = layer.m_chunkData.at(i);
 			if (tileID == 0)
 			{
 				continue;
@@ -112,17 +119,35 @@ bool TileMapRenderer::drawToRenderTexture(const std::string& baseFilePath, const
 		for (auto it = textureMap.begin(); it != textureMap.end(); ++it)
 		{
 			const unsigned int verticesIndex = std::distance(textureMap.begin(), it);
-			m_mapRenderTexture.draw(vertices.at(verticesIndex), &it->second);
+			if (playerLayerFound)
+			{
+				m_infrontPlayerTexture.draw(vertices.at(verticesIndex), &it->second);
+			}
+			else
+			{
+				m_behindPlayerTexture.draw(vertices.at(verticesIndex), &it->second);
+			}
 		}
 	}
 
-	m_mapRenderTexture.display();
+	m_infrontPlayerTexture.display();
+	m_behindPlayerTexture.display();
 
 	return true;
 }
 
-void TileMapRenderer::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void TileMapRenderer::drawBehindPlayerTexture(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	sf::Sprite sprite(m_mapRenderTexture.getTexture());
+	drawRenderTexture(target, states, m_behindPlayerTexture);
+}
+
+void TileMapRenderer::drawinfrontPlayerTexture(sf::RenderTarget & target, sf::RenderStates states) const
+{
+	drawRenderTexture(target, states, m_infrontPlayerTexture);
+}
+
+void TileMapRenderer::drawRenderTexture(sf::RenderTarget& target, sf::RenderStates states, const sf::RenderTexture& texture) const
+{
+	sf::Sprite sprite(texture.getTexture());
 	target.draw(sprite);
 }

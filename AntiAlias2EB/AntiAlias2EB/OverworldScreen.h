@@ -2,6 +2,7 @@
 
 #include "Scene.h"
 #include "TileMapRenderer.h"
+#include "Player.h"
 
 namespace Screens
 {
@@ -11,10 +12,11 @@ namespace Screens
 		Overworld(const sf::RenderWindow& window);
 
 		void handleEvents(const sf::Event& event) override;
-		void update(float fFrameChunk) override;
+		void update(float frameChunk) override;
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
 	private:
 		TileMapRenderer m_tileMapRenderer;
+		Player m_player;
 	};
 }

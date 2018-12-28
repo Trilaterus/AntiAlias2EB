@@ -28,6 +28,12 @@
     <Filter Include="Screen Management\Screens">
       <UniqueIdentifier>{02b6d3c5-fa9d-45de-8d99-a16b016896d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{0e9f1e47-bbc6-47ac-b786-8396ff031245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animations Stuff">
+      <UniqueIdentifier>{90126407-feb0-40f2-915a-b5bbf7f63ab9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -81,6 +87,18 @@
     <ClCompile Include="AnotherScreen.cpp">
       <Filter>Screen Management\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="AnimTexture.cpp">
+      <Filter>Animations Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimTextureInfo.cpp">
+      <Filter>Animations Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureAnimator.cpp">
+      <Filter>Animations Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextureManager.h">
@@ -133,6 +151,18 @@
     </ClInclude>
     <ClInclude Include="AnotherScreen.h">
       <Filter>Screen Management\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimTexture.h">
+      <Filter>Animations Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimTextureInfo.h">
+      <Filter>Animations Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureAnimator.h">
+      <Filter>Animations Stuff</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

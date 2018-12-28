@@ -33,6 +33,12 @@ void TextureManager::loadFont(const std::string& name, const std::string& filena
 	this->m_AllFonts[name] = font;
 }
 
+void TextureManager::loadAnimTexture(const std::string& name, const std::string& textureFilePath, const std::string& animFilePath)
+{
+	m_AllAnimTextures[name] = AnimTexture(textureFilePath);
+	m_AllAnimTextures[name].addAnimation(animFilePath);
+}
+
 sf::Texture& TextureManager::getTexRef(const std::string& texture)
 {
 	return this->m_AllTextures.at(texture);
@@ -41,4 +47,9 @@ sf::Texture& TextureManager::getTexRef(const std::string& texture)
 sf::Font& TextureManager::getFontRef(const std::string& font)
 {
 	return this->m_AllFonts.at(font);
+}
+
+AnimTexture & TextureManager::getAnimTexRef(const std::string& animTex)
+{
+	return this->m_AllAnimTextures.at(animTex);
 }

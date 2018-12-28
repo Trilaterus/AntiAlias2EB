@@ -93,19 +93,16 @@ const TileMapData TileMapDataSerialiser::createTileMapDataFromFile(const std::st
 		}
 
 		tinyxml2::XMLElement* chunkData = layerDataData->FirstChildElement(TmxElementNames::chunkName.c_str());
-		if (chunkData == nullptr)
+		if (chunkData != nullptr)
 		{
 			// May not always have chunk data (i.e. 'player' layer)
-			layerDataRoot = layerDataRoot->NextSiblingElement(TmxElementNames::layerName.c_str());
-			continue;
-		}
-
-		std::string rawChunkText = chunkData->GetText();
-		std::vector<std::string> chunkTexts = StringManipulator::splitString(rawChunkText, ',');
-		for (std::string& tileIndexString : chunkTexts)
-		{
-			StringManipulator::replaceFirstOccurrence(tileIndexString, "\n", "");
-			layerData.m_chunkData.push_back(std::stoul(tileIndexString));
+			std::string rawChunkText = chunkData->GetText();
+			std::vector<std::string> chunkTexts = StringManipulator::splitString(rawChunkText, ',');
+			for (std::string& tileIndexString : chunkTexts)
+			{
+				StringManipulator::replaceFirstOccurrence(tileIndexString, "\n", "");
+				layerData.m_chunkData.push_back(std::stoul(tileIndexString));
+			}
 		}
 
 		tileMapData.m_layerData.push_back(layerData);

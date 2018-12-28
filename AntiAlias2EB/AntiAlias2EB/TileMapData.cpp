@@ -59,7 +59,8 @@ bool TileMapData::isLayerDataValid() const
 	const unsigned int expectedChunkSize = (m_mapAttributes.m_mapWidth + 1) * (m_mapAttributes.m_mapHeight + 1);
 	for (const auto& layer : m_layerData)
 	{
-		if (layer.m_chunkData.size() != expectedChunkSize)
+		if (layer.m_chunkData.size() != expectedChunkSize &&
+			layer.m_chunkData.size() != 0) // Blank layers are fine (i.e. player layer)
 		{
 			return false;
 		}

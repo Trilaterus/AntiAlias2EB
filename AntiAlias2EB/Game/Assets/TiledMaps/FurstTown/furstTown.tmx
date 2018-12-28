@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" infinite="1" nextlayerid="7" nextobjectid="1">
  <tileset firstgid="1" source="tileset1.tsx"/>
  <tileset firstgid="1768" source="a_folder/tileset2.tsx"/>
  <layer id="1" name="floor" width="15" height="15">
@@ -45,6 +46,7 @@
 </chunk>
   </data>
  </layer>
+ <layer id="6" name="player" width="15" height="15">
   <data encoding="csv"/>
  </layer>
  <layer id="4" name="decoration" width="15" height="15">

@@ -129,6 +129,7 @@
     <ClCompile Include="FadeColour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OverworldScreen.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneTransition.cpp" />
@@ -142,11 +143,15 @@
     <ClCompile Include="TileSetDataSerialiser.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Transitioner.cpp" />
+    <ClCompile Include="AnimTexture.cpp" />
+    <ClCompile Include="AnimTextureInfo.cpp" />
+    <ClCompile Include="TextureAnimator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnotherScreen.h" />
     <ClInclude Include="FadeColour.h" />
     <ClInclude Include="OverworldScreen.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneTransition.h" />
@@ -161,6 +166,9 @@
     <ClInclude Include="TileSetDataSerialiser.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Transitioner.h" />
+    <ClInclude Include="AnimTexture.h" />
+    <ClInclude Include="AnimTextureInfo.h" />
+    <ClInclude Include="TextureAnimator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
